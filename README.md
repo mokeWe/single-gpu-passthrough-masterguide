@@ -235,9 +235,7 @@ Shut down the VM and move on to the next section.
 
 ## (Optional) Cloning the Guest
 
-Before continuing, you should clone your current virtual machine.
-In the next steps, we will be removing all devices that allow you to interface with the machine from within your desktop environment/window manager.
-If you end up needing to perform maintenance, it's beneficial to have a way to boot into your VM without having unbind/rebind your GPU's drivers repeatedly.
+Before continuing, you should clone your current virtual machine. In the next steps, we will be removing all devices that allow you to interface with the machine from within your desktop environment/window manager. If you end up needing to perform maintenance, it's beneficial to have a way to boot into your VM without having to unbind or rebind your GPU's drivers repeatedly.
 
 - Right-click on your newly created VM.
 - Click "**Clone...**"
@@ -276,7 +274,7 @@ Repeat these steps until **every** device in your GPU's IOMMU group is passed th
 
 ## (Optional) Audio Passthrough
 
-Passing through audio from the Guest to the Host can be accomplished using most audio servers. I won't be listing all of them here because it would be very verbose and unnecessary. As mentioned above, if you're using PulseAudio, PipeWire + JACK, or scream, check out the [Arch Wiki](https://wiki.archlinux.org/title/PCI_passthrough_via_OVMF#Passing_through_other_devices).
+Passing through audio from the guest to the host can be accomplished using most audio servers. I won't be listing all of them here because it would be very verbose and unnecessary. As mentioned above, if you're using PulseAudio, PipeWire + JACK, or Scream, check out the [Arch Wiki.](https://wiki.archlinux.org/title/PCI_passthrough_via_OVMF#Passing_through_other_devices).
 
 <details>
     <summary><b>PipeWire</b></summary>
@@ -450,7 +448,6 @@ modprobe -r nvidia
 ```bash
 #!/bin/bash
 
-
 modprobe nvidia_drm
 modprobe nvidia_modeset
 modprobe nvidia_uvm
@@ -469,9 +466,7 @@ systemctl isolate graphical.target
 
 # Conclusion
 
-Congratulations, you should now have a functional QEMU/KVM virtual machine, complete with PCI passthrough.
-If you think you can improve this guide in **any way**, I encourage you to **open a pull request**.
-For support, you're free to **open an issue here** or view the list of **resources** below.
+Congratulations! You should now have a functional QEMU/KVM virtual machine, complete with PCI passthrough. If you think you can improve this guide **in any way**, I encourage you to **open a pull request**. For support, you're free to **open an issue here** or view the list of resources below.
 
 ## Resources, Credits, and Special Thanks
 
